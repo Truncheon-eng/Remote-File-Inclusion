@@ -17,13 +17,13 @@
 - скачать репозиторий
 - в файле \/etc\/hosts прописать: `10.90.0.110 lang.local`, где вместо `10.90.0.110` должно быть записано содержимое переменной NGINX_IP из файла .env
 - зайти в директорию с файлом docker-compose.yaml
-- в случае, если необходимо поменять значения переменных окружений в файле .env(данный файл содержит переменные NET_IP, FPM_IP, NGINX_IP, FLAG, где NET_IP задаёт значение IP адреса сети rfi_vulnerability_mynetwork, FPM_IP задаёт IP-адрес контейнера c php-fpm, NGINX_IP задаёт IP адрес контейнера с nginx, а FLAG задаёт флаг; в случае, если на устройстве есть сетевой интерфейс с IP-адресом из файла .env имеет смысл поменять адреса в соответствие с RFC 791)
+- в случае, если необходимо поменять значения переменных окружений в файле .env(данный файл содержит переменные NET_IP, FPM_IP, NGINX_IP, FLAG, где NET_IP задаёт значение IP адреса сети remote-file-inclusion_mynetwork, FPM_IP задаёт IP-адрес контейнера c php-fpm, NGINX_IP задаёт IP адрес контейнера с nginx, а FLAG задаёт флаг; в случае, если на устройстве есть сетевой интерфейс с IP-адресом из файла .env имеет смысл поменять адреса в соответствие с RFC 791)
 - в случае, если не нужно менять параметры, зайти из терминала в директорию с конфигурационными файлами и прописать:
 ```shell
 docker-compose up
 ```
 - для завершения необходимо в терминале в той же папке, что и docker-compose.yaml прописать docker-compose down
-- в случае, если при новом запуске выводится ошибка подобная `ERROR: Network "rfi_vulnerability_mynetwork" needs to be recreated - IPAM option`, необходимо прописать: `docker network rm rfi_vulnerability_mynetwork` и после этого перейти к шагу 4
+- в случае, если при новом запуске выводится ошибка подобная `ERROR: Network "remote-file-inclusion_mynetwork" needs to be recreated - IPAM option`, необходимо прописать: `docker network rm remote-file-inclusion_mynetwork` и после этого перейти к шагу 4
 - можно также менять значения переменных файле php.ini(например прописав `disable_functions = exec,passthru,shell_exec,system`)
 ## Описание уязвимости в приложении
 Необходимо получить доступ к файлу \/flag.txt.
