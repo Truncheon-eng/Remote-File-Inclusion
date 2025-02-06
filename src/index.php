@@ -1,4 +1,5 @@
 <?php
+//hmm,maybe you can find sth interesting in /usr/local/etc/php/
 $path_to_lang_file = "./lang/rus.php";
 if(isset($_GET["lang"])) {
     $param_value = $_GET['lang'];
